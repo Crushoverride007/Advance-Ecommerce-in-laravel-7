@@ -1,14 +1,14 @@
 ---
 # ^^^ YAML documents must begin with the document separator "---"
 #
-#### Example docblock, I like to put a descriptive comment at the top of my 
+#### Example docblock, I like to put a descriptive comment at the top of my
 #### playbooks.
 #
 # Overview: Playbook to bootstrap a new host for configuration management.
 # Applies to: production
-# Description: 
+# Description:
 #   Ensures that a host is configured for management with Ansible.
-# 
+#
 ###########
 #
 #
@@ -30,7 +30,7 @@
 #
 
 
-### 
+###
 # Notice the minus on the line below -- this starts the playbook's record
 # in the YAML document. Only one playbook is allowed per YAML file.  Indent
 # the body of the playbook.
@@ -139,7 +139,7 @@
     # ansible -m setup -i /path/to/hosts.ini host1
     main_vhost: ${ansible_fqdn}
     public_ip:  ${ansible_eth0.ipv4.address}
-    
+
     # vars_files is better suited for distro-specific settings, however...
     is_ubuntu: "'${ansible_distribution}' == 'ubuntu'"
 
@@ -252,7 +252,7 @@
     #
     # Ansible detects when an action changes something.  For example, the
     # file permissions change, a file's content changed, a package was
-    # just installed (or removed), a user was created (or removed).  When 
+    # just installed (or removed), a user was created (or removed).  When
     # a change is detected, Ansible can optionally notify one or more
     # Handlers.  Handlers can take any action that a Task can. Most
     # commonly they are used to restart a service when its configuration
@@ -357,7 +357,7 @@
 
     ##########
     # Notify handlers when things change!
-    # 
+    #
     # Each task can optionally have one or more handlers that get called
     # when the task changes something -- creates a user, updates a file,
     # etc.
