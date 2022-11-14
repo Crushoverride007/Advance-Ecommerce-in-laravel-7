@@ -8,7 +8,7 @@ require 'yaml'
 current_dir = File.dirname(File.expand_path(__FILE__))
 if File.file?("#{current_dir}/vagrant.yml")
     config_file = YAML.load_file("#{current_dir}/vagrant.yml")
-else 
+else
     config_file = YAML.load_file("#{current_dir}/vagrant.yml.dist")
 end
 settings = config_file['configs'][config_file['configs']['use']]
@@ -21,7 +21,7 @@ Vagrant.configure(2) do |config|
     # config.vm.network "forwarded_port", guest: 80, host: 8080
     config.vm.network "private_network", ip: settings['vm_ip']
     config.vm.synced_folder ".", settings['vm_project_path'], create: true, owner: "vagrant", group: "vagrant", mount_options: ["dmode=775", "fmode=774"]
-    
+
     config.vm.provider "virtualbox" do |vb|
         vb.name = settings['vm_name']
         vb.memory = settings['vm_memory']
