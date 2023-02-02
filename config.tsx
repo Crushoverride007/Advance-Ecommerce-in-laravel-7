@@ -1,11 +1,11 @@
 const appConfig = require("config-tsx");
- 
- 
+
+
 const appSettings = appConfig.createPaths(__dirname);
- 
- 
+
+
 appConfig.createTsConfig(__dirname, appSettings["output-dir"]);
- 
+
 module.exports = {
     entry: appSettings["entry-file"],
     output: {
