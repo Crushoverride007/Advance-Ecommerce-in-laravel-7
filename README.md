@@ -18,4 +18,3 @@
 
 
 Having fun while learning
-
